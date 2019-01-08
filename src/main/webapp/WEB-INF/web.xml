@@ -31,8 +31,9 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:dao.xml,
-            classpath:service.xml
+            classpath:spring-dao.xml,
+            classpath:spring-service.xml,
+            classpath:spring-mybatis.xml
         </param-value>
 
     </context-param>

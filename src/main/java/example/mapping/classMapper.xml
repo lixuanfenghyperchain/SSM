@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="example.mapping.classMapper">
+
+    <select id="getClass" parameterType="int" resultMap="ClassResultMap">
+        select * from class c,teacher t where c.teacher_id=t.t_id and c.c_id=#{id}
+    </select>
+
+    <resultMap id="ClassResultMap" type="example.pojo.Classes">
+        <id property="id" column="c_id"></id>
+        <result property="name" column="c_name"></result>
+        <association property="teacher" javaType="example.pojo.Teacher">
+            <id property="id" column="t_id"></id>
+            <result property="name" column="t_name"></result>
+        </association>
+    </resultMap>
+
+    <select id="getClass2" parameterType="int" resultMap="ClassResultMap2">
+    select * from class where c_id=#{id}
+   </select>
+
+    <resultMap id="ClassResultMap2" type="example.pojo.Classes">
+        <id property="id" column="c_id"></id>
+        <result property="name" column="c_name"></result>
+        <association property="teacher" column="teacher_id" select="getTeacher"></association>
+    </resultMap>
+    <select id="getTeacher" parameterType="int" resultType="example.pojo.Teacher">
+    select t_id id,t_name name from teacher where t_id=#{id}
+   </select>
+
+</mapper>

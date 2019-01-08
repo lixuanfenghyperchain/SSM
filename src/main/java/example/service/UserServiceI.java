@@ -1,30 +1,31 @@
 /**
- * Copyright (C), 2016-2018, 趣链科技有限有限公司
- * FileName: StudentDao
+ * Copyright (C), 2016-2019, 趣链科技有限有限公司
+ * FileName: UserServiceI
  * Author:   lixuanfeng
- * Date:     2018/12/21 下午5:32
+ * Date:     2019/1/7 下午5:25
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package example.dao;
+package example.service;
 
+import example.pojo.User;
+
+import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br>
  * 〈〉
  *
  * @author lixuanfeng
- * @create 2018/12/21
+ * @create 2019/1/7
  * @since 1.0.0
  */
-//@Repository(value = "studentDao")
-public class StudentDao {
+public interface UserServiceI {
 
-    public void say() {
-        System.out.println("student dao");
-    }
+    User getUserById();
 
 
+    List<User> getUsers();
 }

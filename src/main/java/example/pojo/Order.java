@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2016-2019, 趣链科技有限有限公司
- * FileName: Student
+ * FileName: Order
  * Author:   lixuanfeng
- * Date:     2019/1/7 下午4:13
+ * Date:     2019/1/7 下午2:55
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
@@ -18,9 +18,10 @@ package example.pojo;
  * @create 2019/1/7
  * @since 1.0.0
  */
-public class Student {
+public class Order {
     private int id;
-    private String name;
+    private String orderNo;
+    private float price;
 
     public int getId() {
         return id;
@@ -30,19 +31,28 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getOrderNo() {
+        return orderNo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setOrderNo(String orderNo) {
+        this.orderNo = orderNo;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Order{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", orderNo='" + orderNo + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

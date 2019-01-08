@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2016-2019, 趣链科技有限有限公司
- * FileName: Student
+ * FileName: User
  * Author:   lixuanfeng
- * Date:     2019/1/7 下午4:13
+ * Date:     2019/1/7 下午12:13
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
@@ -18,9 +18,11 @@ package example.pojo;
  * @create 2019/1/7
  * @since 1.0.0
  */
-public class Student {
+public class User {
+
     private int id;
     private String name;
+    private int age;
 
     public int getId() {
         return id;
@@ -38,11 +40,20 @@ public class Student {
         this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
-        return "Student{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", age=" + age +
                 '}';
     }
 }

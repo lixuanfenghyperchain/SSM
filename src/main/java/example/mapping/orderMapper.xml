@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="example.mapping.orderMapper">
+
+
+    <!--定义别名，数据库的字段与实体类的属性不一致的情况-->
+
+    <!--这样是查询不到我们想要的结果，因为数据库中字段名与实体类的属性名不一致-->
+    <select id="getOrderById" parameterType="int" resultType="example.pojo.Order">
+   select * from orders where order_id=#{id}
+    </select>
+
+    <!--方式一：使用别名-->
+    <select id="selectOrderById" parameterType="int" resultType="example.pojo.Order">
+   select order_id id, order_no orderNo,order_price price from orders where order_id=#{id}
+    </select>
+
+    <!--方式二：使用resultMap 映射实体类属性名和表字段名对应关系-->
+    <select id="selectOrderResultMap" parameterType="int" resultMap="orderResultMap">
+    select * from orders where order_id=#{id}
+  </select>
+
+    <resultMap id="orderResultMap" type="example.pojo.Order">
+        <!--id属性用来映射主键字段-->
+        <id property="id" column="order_id"></id>
+        <!--用result属性来映射非主键字段-->
+        <result property="orderNo" column="order_no"></result>
+        <result property="price" column="order_price"></result>
+    </resultMap>
+
+</mapper>
