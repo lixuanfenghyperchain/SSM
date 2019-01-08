@@ -1,4 +1,4 @@
-package example.inter;
+package example.mapping;
 
 import example.pojo.User;
 import org.apache.ibatis.annotations.Delete;

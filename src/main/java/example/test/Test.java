@@ -10,7 +10,6 @@
  */
 package example.test;
 
-import example.service.StudentService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

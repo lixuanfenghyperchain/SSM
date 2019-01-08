@@ -8,10 +8,11 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package example.service;
+package example.service.impl;
 
-import example.inter.UserMapperI;
+import example.mapping.UserMapperI;
 import example.pojo.User;
+import example.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
