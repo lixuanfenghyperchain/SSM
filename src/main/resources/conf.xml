@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <properties resource="db.properties"></properties>
+    <properties resource="database.properties"></properties>
 
     <typeAliases>
         <!--定义别名-->
@@ -16,11 +16,11 @@
             <transactionManager type="JDBC"/>
             <!-- 配置数据库连接信息 -->
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
+                <property name="driver" value="${mysql.driver}"/>
                 <property name="url"
-                          value="${url}"/>
-                <property name="username" value="${name}"/>
-                <property name="password" value="${password}"/>
+                          value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.name}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>

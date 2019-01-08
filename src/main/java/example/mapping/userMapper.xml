@@ -18,6 +18,14 @@
     </select>
     <!--创建用户-->
     <insert id="addUser" parameterType="example.pojo.User">
+--         插入数据的主键自增长返回到实体类中
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select LAST_INSERT_ID()
+        </selectKey>
+-- 使用uuid需要把对应的数据库表的字段设置为string长度为35，以及实体类中的属性修改
+        <!--<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">-->
+            <!--select uuid()-->
+        <!--</selectKey>-->
 
         insert into users (name,age) values (#{name},#{age})
     </insert>

@@ -10,7 +10,8 @@
  */
 package example.service;
 
-import example.pojo.User;
+
+import example.generator.pojo.User;
 
 import java.util.List;
 
@@ -27,5 +28,4 @@ public interface UserServiceI {
     User getUserById();
 
 
-    List<User> getUsers();
 }

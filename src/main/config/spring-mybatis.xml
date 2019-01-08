@@ -48,11 +48,11 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     <!--=================================================针对mybatis的配置项-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
-        <property name="mapperLocations" value="classpath:example/mapping/*.xml"></property>
+        <property name="mapperLocations" value="classpath:example/generator/mapping/*.xml"></property>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="example.mapping"></property>
+        <property name="basePackage" value="example.generator.dao"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
 

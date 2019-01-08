@@ -10,13 +10,12 @@
  */
 package example.service.impl;
 
-import example.mapping.UserMapperI;
-import example.pojo.User;
+import example.generator.dao.UserMapper;
+import example.generator.pojo.User;
 import example.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -29,16 +28,13 @@ import java.util.List;
 @Service("userService")
 public class UserService implements UserServiceI {
     @Autowired
-    private UserMapperI userMapperI;
+    private UserMapper userMapper;
 
 
     @Override
     public User getUserById() {
-        return userMapperI.getById(1);
+        User user = userMapper.selectByPrimaryKey("1");
+        return user;
     }
 
-    @Override
-    public List<User> getUsers() {
-        return userMapperI.getAll();
-    }
 }

@@ -10,7 +10,7 @@
  */
 package example.test;
 
-import example.inter.UserMapperI;
+import example.mapping.UserMapperI;
 import example.pojo.User;
 import example.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;

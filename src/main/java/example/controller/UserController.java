@@ -10,15 +10,13 @@
  */
 package example.controller;
 
-import example.pojo.User;
+import example.generator.pojo.User;
 import example.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -41,11 +39,11 @@ public class UserController {
         return user;
     }
 
-    @ResponseBody
-    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
-    public List<User> getUsers() {
-        List<User> users = userServiceI.getUsers();
-        return users;
-    }
+//    @ResponseBody
+//    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+//    public List<User> getUsers() {
+//        List<User> users = userServiceI.getUsers();
+//        return users;
+//    }
 
 }

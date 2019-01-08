@@ -10,6 +10,7 @@
  */
 package example.util;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -31,8 +32,10 @@ public class MyBatisUtil {
      * @return SqlSessionFactory
      */
     public static SqlSessionFactory getSqlSessionFactory() {
-        String respurce = "conf.xml";
-        InputStream is = MyBatisUtil.class.getClassLoader().getResourceAsStream(respurce);
+        String resource = "conf.xml";
+        InputStream is = MyBatisUtil.class.getClassLoader().getResourceAsStream(resource);
+        //使用mybatis提供的方法获取输入流
+//        InputStream is = Resources.getResourceAsStream(resource);
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
         return factory;
     }

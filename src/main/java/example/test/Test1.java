@@ -38,10 +38,10 @@ public class Test1 {
 //        String statement = "example.mapping.userMapper.getUser";
 //        User user = sqlSession.selectOne(statement, 1);
 //        System.out.println(user);
-//        testAdd();
+        testAdd();
 //        updateAdd();
 //        deleteAdd();
-        testGetAll();
+//        testGetAll();
     }
 
     public static void testAdd() {
@@ -51,6 +51,7 @@ public class Test1 {
         user.setName("李玄风");
         user.setAge(23);
         int insertResult = sqlSession.insert(statement, user);
+        System.out.println(user);
         sqlSession.close();
         System.out.println(insertResult);
 
