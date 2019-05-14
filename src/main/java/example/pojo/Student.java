@@ -21,6 +21,7 @@ package example.pojo;
 public class Student {
     private int id;
     private String name;
+    private User user;
 
     public int getId() {
         return id;
@@ -38,11 +39,20 @@ public class Student {
         this.name = name;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", user=" + user +
                 '}';
     }
 }
